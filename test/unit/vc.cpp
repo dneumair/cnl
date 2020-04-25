@@ -1,4 +1,6 @@
-#if defined(__cpp_inline_variables)
+#if defined(__cpp_inline_variables) \
+    && (!defined(__GNUG__) || (__GNUG__ > 7)) \
+    && (!defined(__clang__) || (__clang_major__ > 7))
 
 #include <Vc/simd>
 #include <cnl/scaled_integer.h>
