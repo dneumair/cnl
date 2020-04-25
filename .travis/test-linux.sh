@@ -6,6 +6,7 @@ EXCEPTIONS=${EXCEPTIONS:-ON}
 GENERATOR=${GENERATOR:-Ninja}
 INT128=${INT128:-ON}
 STANDARD=${STANDARD:-17}
+TEST_VC=${TEST_VC:-ON}
 TOOLCHAIN=${TOOLCHAIN:-gcc}
 
 CONTAINER_PROJECT_DIR=/cnl
@@ -28,6 +29,7 @@ docker run \
     -DCMAKE_TOOLCHAIN_FILE=\"${CONTAINER_PROJECT_DIR}/test/cmake/toolchain/${TOOLCHAIN}\".cmake \
     -DCNL_EXCEPTIONS=\"${EXCEPTIONS}\" \
     -DCNL_INT128=\"${INT128}\" \
+    -DCNL_TEST_VC=\"${TEST_VC}\" \
     -G \"${GENERATOR}\""
 
 ccache --show-stats

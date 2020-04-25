@@ -41,7 +41,7 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: NUM_CPUS=2 . /root/project/.circleci/test.sh 14
+          command: TEST_VC=OFF NUM_CPUS=2 . /root/project/.circleci/test.sh 14
 
   "c++11":
     docker:
@@ -50,7 +50,7 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: NUM_CPUS=2 . /root/project/.circleci/test.sh 11
+          command: TEST_VC=OFF NUM_CPUS=2 . /root/project/.circleci/test.sh 11
 
 workflows:
   version: 2

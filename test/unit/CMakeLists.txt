@@ -251,8 +251,7 @@ endif(Boost_FOUND AND Boost_VERSION GREATER 106099 AND CNL_EXCEPTIONS)
 # create test of Vc integration
 
 set(CNL_TEST_VC ON CACHE BOOL "test VC library integration")
-if(${CNL_TEST_VC} AND IS_GCC_FAMILY AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER "7.0.0"
-        AND CMAKE_VERSION VERSION_GREATER "3.2")
+if(${CNL_TEST_VC})
     make_test(vc.cpp target "" "")
 
     ExternalProject_Add(
